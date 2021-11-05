@@ -6,16 +6,18 @@ function getRandomLowercase() {
 
 function getRandomUppercase() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+}
 
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 48);
 }
 
-function getRandomRandomSymbol() {
+function getRandomSymbol() {
   const symbols = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\ ";
-  return String.fromCharCode(Math.floor(Math.random() * 26) + );
+  return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+console.log(getRandomSymbol());
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
