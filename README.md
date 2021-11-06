@@ -15,8 +15,8 @@ Must include:
 ## Website
 https://jonzee1914.github.io/Password-generator/
 
-## Screenshot
-![alt text](https://github.com/Jonzee1914/code-refactor/blob/main/screencapture-jonzee1914-github-io-code-refactor.jpg?raw=true)
+## Screen Demo
+![alt text](https://github.com/Jonzee1914/Password-generator/blob/main/Password-gGenerator-gif.gif?raw=true)
 
 ## Contribution
 Made with ❤️ by Jonzee
