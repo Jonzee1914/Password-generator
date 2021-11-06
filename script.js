@@ -13,7 +13,7 @@ function getRandomNumber() {
 }
 
 function getRandomSymbol() {
-  const symbols = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\ ";
+  var symbols = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~\ ";
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
