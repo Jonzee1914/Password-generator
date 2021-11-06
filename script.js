@@ -44,7 +44,7 @@ function generatePassword() {
   // Else if for 4 negative options
   if (!confirmSymbol && !confirmNumber && !confirmUppercase && !confirmLowercase) {
       userPasswordChoices = alert("You must choose a criteria!");
-
+        return generatePassword();
   }
   // If statements based on user prompt input
   // Else if for 4 positive options
