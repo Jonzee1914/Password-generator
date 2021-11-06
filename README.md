@@ -16,7 +16,7 @@ Must include:
 https://jonzee1914.github.io/Password-generator/
 
 ## Screen Demo
-![alt text](https://github.com/Jonzee1914/Password-generator/blob/main/Password-gGenerator-gif.gif?raw=true)
+![alt text](https://github.com//Jonzee1914/Password-generator/blob/main/Password-Generator-gif.gif?raw=true)
 
 ## Contribution
 Made with ❤️ by Jonzee
