@@ -7,13 +7,13 @@ var confirmUppercase;
 var confirmLowercase;
  
 // Characters for password
-symbol =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~", '"'];
+var symbol =  ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~", " ", '"'];
 // Numbers
-number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 // Lowercase
-lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Uppercase
-uppercase =  ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var uppercase =  ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 // Choices declared outside the if statement so they can be concatenated upon condition
 var choices;
@@ -35,11 +35,11 @@ function generatePassword() {
       enter = parseInt(prompt("You must choose between 8 and 128"));
 
   } else {
-      // Continues once user input is validated
-      confirmNumber = confirm("Will this contain numbers?");
-      confirmSymbol = confirm("Will this contain special characters?");
-      confirmUppercase = confirm("Will this contain Uppercase letters?");
-      confirmLowercase = confirm("Will this contain Lowercase letters?");
+      // Character variable prompts
+      confirmNumber = confirm("Would you like to include numbers?");
+      confirmSymbol = confirm("Would you like to include special characters?");
+      confirmUppercase = confirm("Would you like to include Uppercase letters?");
+      confirmLowercase = confirm("Would you like to include Lowercase letters?");
   };
 
   // Else if for 4 negative options
@@ -47,7 +47,7 @@ function generatePassword() {
       choices = alert("You must choose a criteria!");
 
   }
-  // First if statement that uses user input prompts to determine choices
+  // If statements based on user prompt input
   // Else if for 4 positive options
   else if (confirmSymbol && confirmNumber && confirmUppercase && confirmLowercase) {
       choices = symbol.concat(number, lowercase, uppercase);
@@ -98,30 +98,25 @@ function generatePassword() {
       choices = uppercase.concat(uppercase);
   };
 
-  // password variable is an array placeholder for user generated amount of length
+  // password as array placeholder for length selected
   var password = [];
 
-  // Start random selection variables:
-  // Random selection for all variables: 
+  // Random selection variables:
   for (var i = 0; i < enter; i++) {
       var pickChoices = choices[Math.floor(Math.random() * choices.length)];
       password.push(pickChoices);
   }
-  // This joins the password array and converts it to a string
-  // Worked with a tutor to incorporate this option
-  var ps = password.join("");
-  UserInput(ps);
-  return ps;
+  // Join array then convert to string
+  password = password.join("");
+  return password;
 }
+
 // Write password to the #password input
-function UserInput(ps) {
-    document.getElementById("password").textContent = ps;
-
-}
-
 function writePassword() {
-    password = generatePassword();
-    document.getElementById("password").placeholder = password;
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;  
 }
 
 // Add event listener to generate button
